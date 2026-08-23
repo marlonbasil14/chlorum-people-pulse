@@ -15,8 +15,8 @@ export const CORP_DOMAIN = "chlorumsolutions.com";
 const PATTERN = new RegExp(`^[^@\\s]+@${CORP_DOMAIN.replace(".", "\\.")}$`, "i");
 
 function nameFromEmail(email: string) {
-  return email
-    .split("@")[0]
+  const local = email.split("@")[0] ?? email;
+  return local
     .split(/[._-]+/)
     .filter(Boolean)
     .map((p) => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase())

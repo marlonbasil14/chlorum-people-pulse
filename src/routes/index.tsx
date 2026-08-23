@@ -1,24 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SessionProvider, useSession } from "@/components/session";
+import { Login } from "@/components/login";
+import { Dashboard } from "@/components/dashboard";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "People Intelligence — Chlorum Solutions" },
+      {
+        name: "description",
+        content:
+          "Dashboard executivo de Gente e Gestão da Chlorum Solutions: saúde ocupacional, remuneração, produtividade, demografia, R&S, desenvolvimento e ESG.",
+      },
+      { property: "og:title", content: "People Intelligence — Chlorum Solutions" },
+      {
+        property: "og:description",
+        content: "Panorama estratégico dos indicadores de pessoas da Chlorum Solutions.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+function Gate() {
+  const { session } = useSession();
+  return session ? <Dashboard /> : <Login />;
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <SessionProvider>
+      <Gate />
+    </SessionProvider>
   );
 }
