@@ -94,8 +94,18 @@ export const HEAT_COLS = [
 
 const hrow = (
   grade: string,
-  [c, cl, e, f, gg, ind, j]: (number | null)[],
-): HeatRow => ({
+  cells: [
+    number | null,
+    number | null,
+    number | null,
+    number | null,
+    number | null,
+    number | null,
+    number | null,
+  ],
+): HeatRow => {
+  const [c, cl, e, f, gg, ind, j] = cells;
+  return {
   grade,
   cells: {
     COMERCIAL: c,
