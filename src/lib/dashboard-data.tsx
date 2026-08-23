@@ -116,7 +116,8 @@ const hrow = (
     INDUSTRIAL: ind,
     JURÍDICO: j,
   },
-});
+  };
+};
 
 export const HEAT_ROWS: HeatRow[] = [
   hrow("0", [0, 0, 0, 0, 0, 0, 0]),
