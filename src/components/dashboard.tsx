@@ -14,7 +14,7 @@ import {
   type Cat,
   type Kpi,
 } from "@/lib/dashboard-data";
-import logo from "@/assets/chlorum-logo.png.asset.json";
+import { BrandLockup } from "@/components/brand-lockup";
 import { useSession } from "@/components/session";
 
 function KpiCard({ k }: { k: Kpi }) {
@@ -42,7 +42,11 @@ function RemuneracaoWidgets() {
   let idx = 0;
   return (
     <>
+      <div style={{ marginBottom: 18 }}>
+        <BrandLockup variant="remuneracao" size={38} />
+      </div>
       <div className="alert-card">
+
         <h3>Alertas de risco de retenção</h3>
         <div className="sub">{RETENTION.criterio}</div>
         <div className="alert-pill">
@@ -254,7 +258,7 @@ export function Dashboard() {
           title="Voltar à capa"
           onClick={() => setActive("cover")}
         >
-          <img src={logo.url} alt="Chlorum Solutions" />
+          <BrandLockup variant="gestao" size={38} />
           <div>
             <h1>People Intelligence</h1>
             <div className="sub">Visão consolidada · dados de exemplo para validação de layout</div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "@/assets/chlorum-logo.png.asset.json";
+import { BrandLockup } from "@/components/brand-lockup";
 import { useSession, CORP_DOMAIN } from "@/components/session";
 
 export function Login() {
@@ -17,7 +17,7 @@ export function Login() {
           setError(signIn(email, password));
         }}
       >
-        <img src={logo.url} alt="Chlorum Solutions" />
+        <BrandLockup variant="gestao" size={44} />
         <h1>
           People <em>Intelligence</em>
         </h1>
