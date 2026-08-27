@@ -254,7 +254,7 @@ export function Dashboard() {
           title="Voltar à capa"
           onClick={() => setActive("cover")}
         >
-          <img src={logo.url} alt="Chlorum Solutions" />
+          <BrandLockup variant="gestao" size={38} />
           <div>
             <h1>People Intelligence</h1>
             <div className="sub">Visão consolidada · dados de exemplo para validação de layout</div>
