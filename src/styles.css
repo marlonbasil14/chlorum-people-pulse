@@ -111,6 +111,40 @@ header.topbar .brand {
 header.topbar img {
   height: 26px;
 }
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-family: var(--font-display), "Fraunces", serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  flex: none;
+}
+.brand-words {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.brand-name {
+  font-family: var(--font-display), "Fraunces", serif;
+  font-weight: 500;
+}
+.brand-name em {
+  font-style: italic;
+}
+.brand-org {
+  font: 400 0.58rem var(--font-brand);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
 header.topbar h1 {
   font: 400 1.15rem/1.2 var(--font-brand);
   margin: 0;
