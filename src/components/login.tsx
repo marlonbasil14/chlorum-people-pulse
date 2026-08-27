@@ -17,7 +17,7 @@ export function Login() {
           setError(signIn(email, password));
         }}
       >
-        <img src={logo.url} alt="Chlorum Solutions" />
+        <BrandLockup variant="gestao" size={44} />
         <h1>
           People <em>Intelligence</em>
         </h1>
