@@ -14,7 +14,7 @@ import {
   type Cat,
   type Kpi,
 } from "@/lib/dashboard-data";
-import logo from "@/assets/chlorum-logo.png.asset.json";
+import { BrandLockup } from "@/components/brand-lockup";
 import { useSession } from "@/components/session";
 
 function KpiCard({ k }: { k: Kpi }) {
